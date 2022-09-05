@@ -54,16 +54,21 @@
     <!-- BIKES SECTION: initializing of the grid here -->
 
     <div class="row">
-      <div class="col-12">
-        <div class="card" style="width: 18rem">
-          <img src="/images/bike-1.jpg" alt="Bike" />
-          <div class="card-body">
-            <h5 class="card-title">BIK045</h5>
-            <p class="price-article">650€</p>
-            <a href="shop" class="btn btn-outline-info btn-sm">Acheter</a>
-          </div>
+      <% for(let i=0;i<dataBike.length;i++){
+          %>
+          <div class="colxs-12 col-sm-6 col-md-4">
+          <div class="card" style="width: 18rem">
+            <img src=<%=dataBike[i].url %> class="card-img-top">
+            <div class="card-body text-center">
+              <h5 class="card-title"><%=dataBike[i].name%></h5>
+              <p class="price-article"><%=dataBike[i].price%>€</p>
+              <a href="shop" class="btn btn-outline-info btn-sm">Acheter</a>
+            </div>
         </div>
       </div>
+      <%
+      } 
+      %> 
     </div>
 
     <!-- Scripts ------------------------------------------- -->
