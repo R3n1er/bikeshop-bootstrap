@@ -1,22 +1,62 @@
-body{
-  font-family: 'Darker Grotesque', sans-serif;
+/* ------ Body ---- */
+
+body {
+  background-color: #ffffff;
+  font-family: "Darker Grotesque", sans-serif;
 }
 
-a, a:hover{
-  color: white
-}
+/* ---------- Home page -------------- */
 
-#picture-header {
-  background-image: url('../assets/bike-background.jpg');
+.jumbotron {
+  background-image: url("/images/bike-background.jpg");
   background-size: cover;
   background-position: center;
   height: 150px;
-  margin-bottom: 20px;
 }
 
-.card {
- margin-bottom: 20px;
+.navbar {
+  padding: 0px;
+  color: #ffffff;
 }
-.basket-img{
-  width: 170px;
+
+.navbar:hover {
+  color: #ffffff;
+}
+
+.navbar:link {
+  text-decoration: none;
+}
+.logo {
+  margin-left: 10px;
+}
+
+/* ----- Shop page ---------- */
+
+.header-shop {
+  height: 40px;
+  padding-left: 20px;
+}
+
+.icon-basket {
+  margin-right: 5px;
+}
+
+.ariane {
+  margin-top: 25px;
+}
+
+.basket-img {
+  width: 100px;
+}
+
+.basket-item {
+  background-color: #f8f8f8;
+}
+
+.total-box {
+  font-weight: bold;
+}
+
+.btn-checkout {
+  font-weight: bold;
 }
