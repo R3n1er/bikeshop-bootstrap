@@ -39,25 +39,25 @@
           </a>
         </nav>
       </div>
+            <!-- JUMBOTRON -->
+            <div class="row">
 
-      <!-- JUMBOTRON -->
+                <div class="col-12 jumbotron jumbotron-fluid">
+                    <div class="container">
+                    </div>
+                </div>
 
-      <div class="row">
-        <div class="col-12 jumbotron jumbotron-fluid">
-          <div class="container">
-            <div id="picture-header"></div>
-          </div>
-        
-      </div>
-    </div>
+            </div>
 
     <!-- BIKES SECTION: initializing of the grid here -->
-
+<!-- Liste de tous les vélos -->
     <div class="row">
+
       <% for(let i=0;i<dataBike.length;i++){
           %>
           <div class="colxs-12 col-sm-6 col-md-4">
           <div class="card" style="width: 18rem">
+
             <img src=<%=dataBike[i].url %> class="card-img-top">
             <div class="card-body text-center">
               <h5 class="card-title"><%=dataBike[i].name%></h5>
@@ -66,9 +66,11 @@
             </div>
         </div>
       </div>
+
       <%
       } 
       %> 
+      
     </div>
 
     <!-- Scripts ------------------------------------------- -->

@@ -11,20 +11,17 @@ var dataBike = [
   { name: "ZAMIT15", url: "/images/bike-6.jpg", price: 745 },
 ];
 
-// Variable pour le panier (faut panier)
-
+// Variable pour le panier - initialiser le panier commme un tableau vide
 var dataCardBike = [];
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Bike Shop Experience", dataBike: dataBike });
+  res.render("index", {dataBike: dataBike });
 });
 
 /* SHOP PAGE. */
 router.get("/shop", function (req, res, next) {
-  res.render("shop", {
-    title: "Bike Shop Experience - SHOP PAGE",
-    dataCardBike: dataCardBike,
+  res.render("shop", {dataCardBike: dataCardBike,
   });
 });
 

@@ -26,7 +26,11 @@
   </head>
 
   <body>
-    <div class="row">
+
+<div class="container-fluid">
+
+  <!-- Header -->
+  <div class="row">
       <nav class="header col-12 navbar navbar-light bg-dark">
         <a class="navbar" href="/">
           <img
@@ -40,6 +44,7 @@
         </a>
       </nav>
     </div>
+
     <div class="row ariane">
       <nav aria-label="breadcrumb" class="col-12">
         <ol class="breadcrumb">
@@ -50,10 +55,8 @@
     </div>
 
     <h1>Basket</h1>
-
     <!-- Tableau de panier -->
-
-    <div class="row">
+<div class="row">
                 <table class="table">
                     <thead>
                       <tr>
@@ -69,7 +72,8 @@
                     <tbody>
                         <% 
 
-                        var totalCmd = 0;
+                        var totalCmd = 0; //Initialisation du total à 0
+
                         for(var i=0;i<dataCardBike.length;i++){
                         %>
                             <tr class="basket-item">
@@ -108,11 +112,14 @@
                     </tbody>
                 </table>
             </div>
+            // Bouton CHeckout
             <div class="row">
                 <div class="col-12 text-right">
                     <button class="btn btn-outline-info btn-sm btn-checkout" name="button-checkout">Checkout</button>
                 </div>
             </div>
+
+</div> 
 
     <!-- scripts -->
     <script
