@@ -12,7 +12,10 @@ var dataBike = [
 ];
 
 // Variable pour le panier - initialiser le panier commme un tableau vide
-var dataCardBike = [];
+var dataCardBike = [
+  { name: "BIK045", url: "/images/bike-1.jpg", price: 679, quantity: 1 },
+  { name: "ZOOK07", url: "/images/bike-2.jpg", price: 999, quantity: 2 },
+];
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -21,8 +24,38 @@ router.get("/", function (req, res, next) {
 
 /* SHOP PAGE. */
 router.get("/shop", function (req, res, next) {
+  console.log(req.query) // Voir ce qui transite dans la requete
+
+  dataCardBike.push({
+    name : req.query.bikeNameFromFront,
+    url: req.query.bikeImageFromFront,
+    price: req.query.bikePriceFromFront,
+    quantity: 1,
+  })
+
   res.render("shop", {dataCardBike: dataCardBike,
   });
 });
+
+// ROute Delete SHop
+
+router.get("/delete-shop", function (req, res, next) {
+  dataCardBike.splice(req.query.position, 1);
+
+  res.render("shop", { dataCardBike: dataCardBike });
+});
+
+
+// Route Update Shop
+router.post("/update-shop", function (req, res, next) {
+  var position = req.body.position;
+  var newQuantity = req.body.quantity;
+
+  dataCardBike[position].quantity = newQuantity;
+
+  res.render("shop", { dataCardBike: dataCardBike });
+});
+
+
 
 module.exports = router;

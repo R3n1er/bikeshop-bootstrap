@@ -60,9 +60,9 @@
 
             <img src=<%=dataBike[i].url %> class="card-img-top">
             <div class="card-body text-center">
-              <h5 class="card-title"><%=dataBike[i].name%></h5>
-              <p class="price-article"><%=dataBike[i].price%>€</p>
-              <a href="shop" class="btn btn-outline-info btn-sm">Acheter</a>
+              <h5 class="card-title"><%= dataBike[i].name%></h5>
+              <p class="price-article"><%= dataBike[i].price%>€</p>
+              <a href="/shop?bikeNameFromFront=<%= dataBike[i].name%>&bikePriceFromFront=<%= dataBike[i].price%>&bikeImageFromFront=<%= dataBike[i].url%>" class="btn btn-outline-info btn-sm">Buy</a>
             </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
       <%
       } 
       %> 
-      
+
     </div>
 
     <!-- Scripts ------------------------------------------- -->
