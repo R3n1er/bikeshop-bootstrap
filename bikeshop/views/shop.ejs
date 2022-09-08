@@ -90,7 +90,10 @@
                                 </td>
                                 <td><%= dataCardBike[i].price %>€</td>
                                 <td><%= dataCardBike[i].price * dataCardBike[i].quantity %>€</td>
-                                <td><button class="btn btn-outline-info btn-sm" name="button"><i class="far fa-trash-alt"></i></button></td>
+                                
+                                <td><a href="/delete-shop?position=<%=i%>"><button class="btn btn-outline-info btn-sm" name="button"><i class="far fa-trash-alt"></i></button>
+                                  
+                                  </a></td>
                             </tr>
                             
                         <% //Calcul du total du panier
@@ -113,7 +116,7 @@
                 </table>
             </div>
 
-            
+
             <div class="row">
                 <div class="col-12 text-right">
                     <button class="btn btn-outline-info btn-sm btn-checkout" name="button-checkout">Checkout</button>

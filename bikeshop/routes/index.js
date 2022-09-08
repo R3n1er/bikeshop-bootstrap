@@ -12,20 +12,17 @@ var dataBike = [
 ];
 
 // Variable pour le panier - initialiser le panier commme un tableau vide
-var dataCardBike = [
-  { name: "BIK045", url: "/images/bike-1.jpg", price: 679, quantity: 1 },
-  { name: "ZOOK07", url: "/images/bike-2.jpg", price: 999, quantity: 2 },
-];
+var dataCardBike = [];
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", {dataBike: dataBike });
 });
 
-/* SHOP PAGE. */
+/* SHOP PAGE. Afficher le panier*/
 router.get("/shop", function (req, res, next) {
   console.log(req.query) // Voir ce qui transite dans la requete
-
+// Envoyer les elements dans le panier avec un push
   dataCardBike.push({
     name : req.query.bikeNameFromFront,
     url: req.query.bikeImageFromFront,
@@ -37,11 +34,9 @@ router.get("/shop", function (req, res, next) {
   });
 });
 
-// ROute Delete SHop
-
+// Route Delete SHop - Supprimer un velo du panier
 router.get("/delete-shop", function (req, res, next) {
   dataCardBike.splice(req.query.position, 1);
-
   res.render("shop", { dataCardBike: dataCardBike });
 });
 
