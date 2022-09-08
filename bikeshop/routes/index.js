@@ -34,17 +34,21 @@ router.get("/shop", function (req, res, next) {
   });
 });
 
-// Route Delete SHop - Supprimer un velo du panier
+// Route Delete Shop - Supprimer un velo du panier
 router.get("/delete-shop", function (req, res, next) {
-  dataCardBike.splice(req.query.position, 1);
+  dataCardBike.splice(req.query.position, 1); // Supprimer le velo par rapport a sa position dans le tour de boucle. la methode splicea besoin de 2 elements
+  // Utiliser la methode filter si on veux utiliser le reference du vélo
   res.render("shop", { dataCardBike: dataCardBike });
 });
 
 
-// Route Update Shop
+// Route Update Shop. Route en POST car on demande à l'utilisateur à saisir une quantité de vélo
 router.post("/update-shop", function (req, res, next) {
-  var position = req.body.position;
-  var newQuantity = req.body.quantity;
+  console.log(req.body)
+  // *****Déclaration de variables de position et de quantité*****
+
+  var position = req.body.position; // Avoir la position de la ligne du velo dans le tour de boucle
+  var newQuantity = req.body.quantity; // Définir la nouvelle quantité de vélo
 
   dataCardBike[position].quantity = newQuantity;
 

@@ -83,14 +83,17 @@
                                     <%= dataCardBike[i].name %>
                                 </td>
                                 <td>
-                                    <form>
+                                    <form action="/update-shop" method="POST">
+                                       <%//Ajouter un champs de formulaire vide qui donne la position du velo à updater%>
+                                       <input type="hidden" name="position" value="<%=i%>">
                                         <input type="text" name="quantity" value="<%= dataCardBike[i].quantity%>">
-                                        <button class="btn btn-outline-info btn-sm" name="button"><i class="fas fa-sync-alt"></i></button>
+                                       
+                                        <button type="submit" class="btn btn-outline-info btn-sm" name="button"><i class="fas fa-sync-alt"></i></button>
                                     </form>
                                 </td>
                                 <td><%= dataCardBike[i].price %>€</td>
                                 <td><%= dataCardBike[i].price * dataCardBike[i].quantity %>€</td>
-                                
+                                <%// Supression d'un vélo du panier%>
                                 <td><a href="/delete-shop?position=<%=i%>"><button class="btn btn-outline-info btn-sm" name="button"><i class="far fa-trash-alt"></i></button>
                                   
                                   </a></td>
